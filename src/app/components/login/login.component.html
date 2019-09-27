@@ -1,0 +1,50 @@
+<script>
+
+</script>
+
+<style>
+body{  
+    background:url(assets/img/6.gif)no-repeat;  
+    width:100%;  
+    height:100%;  
+    background-size:100% 100%;  
+    position:absolute;  
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/img/6.gif',sizingMethod='scale');  
+}  
+.login{  
+    background:url(assets/img/8.jpg)no-repeat;  
+    width:100%;  
+    height:100%;  
+    background-size:100% 100%;  
+    position:absolute;  
+    filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/img/7.jpg',sizingMethod='scale');  
+}  
+
+</style>
+		<body>
+			<div id="box" class = "login" style="opacity: 70%; border-radius: 10%">
+			<div id="logo" style="padding-left: 22%">欢迎登陆！</div>
+			<div id="info">
+                <input type="text" class="form-control" id="user" placeholder="账号:" [(ngModel)]="userList.user">
+                <br>
+                <input type="password" class="form-control" id="pass" placeholder="密码:" [(ngModel)]="userList.pass">
+                <br>
+				<div class="input-group">
+					<img id="img-submit" src="">
+ 
+					<u><input type="text" class="form-control"
+							  id="validateCode" name="validateCode"
+							  placeholder="       请输入验证码！"></u>
+                </div>
+                <!-- <div class="form-group">
+                    <div class="col-md-5">
+                        <input type="file" class="form-control" placeholder="请选择文件"/>
+                    </div>	
+                </div> -->
+ 
+				<button class="btn btn-info" id="btn-login" style="width:35%;float: left;" (click)="VerifyLogin()">登录</button>
+				<button class="btn btn-info" id="btn-login" style="width:35%;float: left;" (click)="VerifyRegister()">注册</button>
+				<br><div id="remember" style="padding-top: 50px">记住账号 <input type = "checkbox" (click)="rem_User()"></div>
+			</div>
+		</div>
+	</body>

@@ -1,0 +1,43 @@
+<style>
+.carcousel-1  {
+  background: url(assets/img/1.jpg);
+  width:100%;  
+  height:100%;  
+  background-size:100% 100%;  
+  position:absolute;  
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/img/1.jpg',sizingMethod='scale');  
+}
+.carcousel-2  {
+  background: url(assets/img/2.jpg);
+  width:100%;  
+  height:100%;  
+  background-size:100% 100%;  
+  position:absolute;  
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/img/2.jpg',sizingMethod='scale');  
+}
+.carcousel-3  {
+  background: url(assets/img/3.jpg);
+  width:100%;  
+  height:100%;  
+  background-size:100% 100%;  
+  position:absolute;  
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/img/3.jpg',sizingMethod='scale');  
+}
+.carcousel-4  {
+  background: url(assets/img/4.jpg);
+  width:100%;  
+  height:100%;  
+  background-size:100% 100%;  
+  position:absolute;  
+  filter:progid:DXImageTransform.Microsoft.AlphaImageLoader(src='assets/img/4.jpg',sizingMethod='scale');  
+}
+
+</style>
+<nz-carousel nzAutoPlay>
+    <div nz-carousel-content  *ngFor="let index of array"  >
+      <div class="{{'carcousel-'+index}}"></div>
+      <p style="color: red">{{index}}</p>
+    </div>
+</nz-carousel>
+
+  

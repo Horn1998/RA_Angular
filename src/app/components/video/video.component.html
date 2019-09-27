@@ -1,0 +1,44 @@
+<div class="mainContainer">
+    <video name="videoElement" class="centeredVideo" id="videoElement" controls width="1024" height="576" autoplay>
+        Your browser is too old which doesn't support HTML5 video.
+    </video>
+
+</div>
+
+<script src="https://cdn.bootcss.com/flv.js/1.5.0/flv.js"></script>
+
+<script>
+     if (flvjs.isSupported()) {
+        startVideo()
+    }
+    function startVideo(){
+        var videoElement = document.getElementById('videoElement');
+        var flvPlayer = flvjs.createPlayer({
+            type: 'flv',
+            isLive: true,
+            hasAudio: true,
+            hasVideo: true,
+            enableStashBuffer: true,
+            url: 'http://140.143.194.150:8080/live?port=1935&app=myapp&stream=mystream'
+
+        });
+        flvPlayer.attachMediaElement(videoElement);
+        flvPlayer.load();
+        flvPlayer.play();
+    }
+    videoElement.addEventListener('click', function(){
+        alert( '是否支持点播视频：' + flvjs.getFeatureList().mseFlvPlayback + ' 是否支持httpflv直播流：' + flvjs.getFeatureList().mseLiveFlvPlayback )
+    })
+    function destoryVideo(){
+        flvPlayer.pause();
+        flvPlayer.unload();
+        flvPlayer.detachMediaElement();
+        flvPlayer.destroy();
+        flvPlayer = null;
+    }
+    function reloadVideo(){
+        // destoryVideo()
+        startVideo()
+    }
+</script>
+

@@ -1,0 +1,18 @@
+<style>
+.sitebar{
+    float: left;
+    height:100%;
+    width:15%
+}
+.right{
+    width: 85%;
+    height: 500px;
+    float: left;
+}
+</style>
+<app-head-component (childEvent)="getChildTheme($event)" ></app-head-component>
+<app-sitebar class="sitebar" [theme] = 'sitebar_style'  (navigateTo) = "getUrl($event)"></app-sitebar>
+
+<div class="right">
+    <router-outlet></router-outlet>
+</div>
